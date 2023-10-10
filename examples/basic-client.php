@@ -7,6 +7,13 @@ use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+function dnd($data) {
+    echo "<pre>";
+    var_dump($data);
+    echo "</pre>";
+    die();
+}
+
 $clientBuilder = new ClientBuilder();
 $clientBuilder->addPlugin(new HeaderDefaultsPlugin([
     'Accept' => 'application/json',
@@ -18,4 +25,6 @@ $options = new Options([
 
 $sdk = new Sdk($options);
 
+// All todos
 $response = $sdk->todos()->all();
+dnd($response);
