@@ -23,4 +23,9 @@ final class Todos {
     public function allPosts(): array {
         return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/posts'));
     }
+
+    // Get post
+    public function getPost($id): array {
+        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/posts/' . $id));
+    }
 }
