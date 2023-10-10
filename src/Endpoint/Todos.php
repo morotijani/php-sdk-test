@@ -48,4 +48,9 @@ final class Todos {
     public function deletePost($id): array {
         return ResponseMediator::getContent($this->sdk->getHttpClient()->delete('/posts/' . $id));
     }
+
+    // Filtering post
+    public function filterPost($param, $value): array {
+        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/posts?' . $param . '=' . $value));
+    }
 }
