@@ -53,4 +53,9 @@ final class Todos {
     public function filterPost($param, $value): array {
         return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/posts?' . $param . '=' . $value));
     }
+
+    // Nested post
+    public function nestedPost($id, $nested): array {
+        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/posts/' . $id . '/' . $nested));
+    }
 }

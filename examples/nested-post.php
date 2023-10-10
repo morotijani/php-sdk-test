@@ -13,8 +13,6 @@ $clientBuilder->addPlugin(new HeaderDefaultsPlugin([
     'Accept' => 'application/json',
 ]));
 
-$nested = 'todos';
-$id = 10;
 $options = new Options([
     'client_builder' => $clientBuilder,
 ]);
@@ -22,5 +20,6 @@ $options = new Options([
 $sdk = new Sdk($options);
 
 // All Posts
-$response = $sdk->todos()->filterPost($id, $nested);
+$id = 4;
+$response = $sdk->todos()->getPost($id);
 $sdk->dnd($response);
