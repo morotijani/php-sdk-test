@@ -33,4 +33,9 @@ final class Todos {
     public function createPost(): array {
         return ResponseMediator::getContent($this->sdk->getHttpClient()->post('/posts'));
     }
+
+    // Update post
+    public function updatePost($id): array {
+        return ResponseMediator::getContent($this->sdk->getHttpClient()->put('/posts/' . $id));
+    }
 }
