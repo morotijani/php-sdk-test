@@ -38,4 +38,14 @@ final class Todos {
     public function updatePost($id): array {
         return ResponseMediator::getContent($this->sdk->getHttpClient()->put('/posts/' . $id));
     }
+
+    // Patch post
+    public function patchPost($id): array {
+        return ResponseMediator::getContent($this->sdk->getHttpClient()->patch('/posts/' . $id));
+    }
+
+    // Delete post
+    public function deletePost($id): array {
+        return ResponseMediator::getContent($this->sdk->getHttpClient()->delete('/posts/' . $id));
+    }
 }
