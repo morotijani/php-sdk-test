@@ -14,8 +14,13 @@ final class Todos {
         $this->sdk = $sdk;
     }
 
-    // All data
+    // All todos
     public function all(): array {
         return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/todos'));
+    }
+
+    // All post
+    public function allPosts(): array {
+        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/posts'));
     }
 }

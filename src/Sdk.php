@@ -37,4 +37,11 @@ final class Sdk {
     public function getHttpClient(): HttpMethodsClientInterface {
         return $this->clientBuilder->getHttpClient();
     }
+
+    public function dnd($data) {
+        echo "<pre>";
+        var_dump($data);
+        echo "</pre>";
+        die();
+    }
 }
